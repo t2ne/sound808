@@ -21,7 +21,9 @@ Movie.insert = (newMovie, result) => {
   });
 };
 // ...newMovie
-// ... é um operador, o spread operator (operador de propagação), utilizado em várias situações, sendo que a mais usual é "espalhar" elementos de um array ou propriedades de um objeto. No exemplo acima serve para combinar, num só objeto, o novo id do filme inserido com o objeto que constitui o novo filme.
+// ... é um operador, o spread operator (operador de propagação), utilizado em várias situações, sendo que a mais usual é "espalhar"
+// ... elementos de um array ou propriedades de um objeto. No exemplo acima serve para combinar, num só objeto, o novo id do filme
+// ... inserido com o objeto que constitui o novo filme.
 
 // result representa uma função de callback que será chamada após a execução da query
 
