@@ -34,7 +34,11 @@ const swaggerOptions = {
       },
     ],
   },
-  apis: ["./app/routes/*.js", "./app/controllers/*.js", "./app/models/*.js"], // Paths to API doc comments
+  apis: [
+    "./backend/routes/*.js",
+    "./backend/controllers/*.js",
+    "./backend/models/*.js",
+  ], // Paths to API doc comments
 };
 
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
@@ -50,7 +54,7 @@ app.get("/", (req, res) => {
 });
 
 // Importing routes
-require("./app/routes/movie.routes.js")(app);
+require("./backend/routes/movie.routes.js")(app);
 
 // Starting the server
 app.listen(PORT, () => {
