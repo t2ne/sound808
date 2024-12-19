@@ -31,3 +31,11 @@ CREATE TABLE musicas (
     id_album INT NOT NULL,
     FOREIGN KEY (id_album) REFERENCES albuns(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+INSERT INTO artistas (nome, idade, nacionalidade) VALUES ('ArtistaTeste1', 20, 'Portugal');
+
+INSERT INTO generos (nome) VALUES ('GéneroTeste1');
+
+INSERT INTO musicas (nome, tempo, id_album) VALUES ('MúsicaTeste1', 1.0, 1);
+
+INSERT INTO albuns (nome, data, id_genero, id_artista) VALUES ('ÁlbumTeste1', 2024-12-20, 1, 1);
