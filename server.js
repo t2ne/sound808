@@ -2,8 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
-const path = require("path");
-const favicon = require("serve-favicon");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,20 +11,14 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Serve favicon.ico
-// app.use(
-//   "app/assets/favicon.ico",
-//   express.static(path.join(__dirname, "favicon.ico"))
-// );
-
 // Setup Swagger
 const swaggerOptions = {
   swaggerDefinition: {
     openapi: "3.0.0",
     info: {
-      title: "Movies API",
+      title: "Sound808",
       version: "1.0.0",
-      description: "API for managing movies in a MySQL database",
+      description: "API for managing music stuff.",
     },
     servers: [
       {
@@ -54,7 +46,10 @@ app.get("/", (req, res) => {
 });
 
 // Importing routes
-require("./backend/routes/movie.routes.js")(app);
+require("./backend/routes/album.routes.js")(app);
+require("./backend/routes/artista.routes.js")(app);
+require("./backend/routes/genero.routes.js")(app);
+require("./backend/routes/musica.routes.js")(app);
 
 // Starting the server
 app.listen(PORT, () => {

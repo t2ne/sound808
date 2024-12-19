@@ -1,6 +1,6 @@
 module.exports = {
   DBSERVER: "localhost",
-  DBUSER: "estg",
-  DBPASS: "nenhuma",
-  DBNAME: "moviesdb",
+  DBUSER: "localhost",
+  DBPASS: "",
+  DBNAME: "musicapi",
 };
