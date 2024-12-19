@@ -11,30 +11,25 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Setup Swagger
-const swaggerOptions = {
-  swaggerDefinition: {
-    openapi: "3.0.0",
-    info: {
-      title: "Sound808",
-      version: "1.0.0",
-      description: "API for managing music stuff.",
+const swaggerDefinition = {
+  openapi: "3.0.1",
+  info: {
+    title: "Sound808 API",
+    version: "1.0.0",
+    description: "API de gestão de músicas, álbuns, artistas e géneros.",
+    contact: {
+      name: "t8ne - cyzuko - eduardoc0uto",
     },
-    servers: [
-      {
-        url: `http://localhost:${PORT}`,
-      },
-    ],
   },
-  apis: [
-    "./backend/routes/*.js",
-    "./backend/controllers/*.js",
-    "./backend/models/*.js",
-  ], // Paths to API doc comments
+  basePath: "/",
 };
+const swaggerOptions = {
+  swaggerDefinition,
+  apis: ["./backend/routes/*.js"],
+};
+const swaggerSpec = swaggerJSDoc(swaggerOptions);
 
-const swaggerDocs = swaggerJSDoc(swaggerOptions);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Middleware for handling requests
 app.use(express.json());
@@ -42,7 +37,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Test route
 app.get("/", (req, res) => {
-  res.json({ message: "Movies API . IPVC" });
+  res.json({ message: "Sound808 API" });
 });
 
 // Importing routes
