@@ -13,20 +13,16 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Serve favicon.ico
-app.use(
-  "app/assets/favicon.ico",
-  express.static(path.join(__dirname, "favicon.ico"))
-);
+app.use(favicon(path.join(__dirname, "app", "/assets/favicon.ico")));
 
 // Setup Swagger
 const swaggerOptions = {
   swaggerDefinition: {
     openapi: "3.0.0",
     info: {
-      title: "Movies API",
+      title: "PW-MusicAPI",
       version: "1.0.0",
-      description: "API for managing movies in a MySQL database",
+      description: "API for managing music data.",
     },
     servers: [
       {
@@ -46,7 +42,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Test route
 app.get("/", (req, res) => {
-  res.json({ message: "Movies API . IPVC" });
+  res.json({ message: "Music API . IPVC" });
 });
 
 // Importing routes
