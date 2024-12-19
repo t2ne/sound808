@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const path = require("path");
+const favicon = require("serve-favicon");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,6 +12,12 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+// Serve favicon.ico
+app.use(
+  "app/assets/favicon.ico",
+  express.static(path.join(__dirname, "favicon.ico"))
+);
 
 // Setup Swagger
 const swaggerOptions = {
