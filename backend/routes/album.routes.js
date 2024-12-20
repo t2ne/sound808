@@ -5,7 +5,7 @@ module.exports = (app) => {
   /**
    * @swagger
    * tags:
-   *   name: Albuns
+   *   name: Álbuns
    *   description: Operações sobre os álbuns
    */
 
@@ -14,7 +14,7 @@ module.exports = (app) => {
    * /api/albuns:
    *   get:
    *     summary: Consultar todos os álbuns
-   *     tags: [Albuns]
+   *     tags: [Álbuns]
    *     responses:
    *       200:
    *         description: Lista de álbuns
@@ -45,7 +45,7 @@ module.exports = (app) => {
    * /api/albuns/{id}:
    *   get:
    *     summary: Consultar um álbum pelo id
-   *     tags: [Albuns]
+   *     tags: [Álbuns]
    *     parameters:
    *       - in: path
    *         name: id
@@ -83,7 +83,7 @@ module.exports = (app) => {
    * /api/albuns:
    *   post:
    *     summary: Inserir um novo álbum
-   *     tags: [Albuns]
+   *     tags: [Álbuns]
    *     requestBody:
    *       required: true
    *       content:
@@ -128,7 +128,7 @@ module.exports = (app) => {
    * /api/albuns/{id}:
    *   put:
    *     summary: Atualizar um álbum pelo id
-   *     tags: [Albuns]
+   *     tags: [Álbuns]
    *     parameters:
    *       - in: path
    *         name: id
@@ -182,7 +182,7 @@ module.exports = (app) => {
    * /api/albuns/{id}:
    *   delete:
    *     summary: Apagar um álbum pelo id
-   *     tags: [Albuns]
+   *     tags: [Álbuns]
    *     parameters:
    *       - in: path
    *         name: id

@@ -1,18 +1,18 @@
-interface Genero {
+export type Genero ={
     id: number;
     nome: string;
   }
   
   // Fetch all generos
   export async function getGeneros(): Promise<Genero[]> {
-    const res = await fetch('http://localhost:5000/api/generos');
+    const res = await fetch('http://localhost:3000/api/generos');
     if (!res.ok) throw new Error('Erro no fetch de géneros...');
     return await res.json();
   }
   
   // Add a new genero
   export async function addGenero(genero: Omit<Genero, 'id'>): Promise<Genero> {
-    const res = await fetch('http://localhost:5000/api/generos', {
+    const res = await fetch('http://localhost:3000/api/generos', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(genero),
@@ -24,7 +24,7 @@ interface Genero {
   
   // Update an existing genero
   export async function updateGenero(id: number, genero: Genero): Promise<Genero> {
-    const res = await fetch(`http://localhost:5000/api/generos/${id}`, {
+    const res = await fetch(`http://localhost:3000/api/generos/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(genero),
@@ -36,7 +36,7 @@ interface Genero {
   
   // Delete a genero
   export async function deleteGenero(id: number): Promise<void> {
-    const res = await fetch(`http://localhost:5000/api/generos/${id}`, {
+    const res = await fetch(`http://localhost:3000/api/generos/${id}`, {
       method: 'DELETE',
     });
   
@@ -45,7 +45,7 @@ interface Genero {
   
   // Fetch a genero by its ID
   export async function getGeneroById(id: number): Promise<Genero> {
-    const res = await fetch(`http://localhost:5000/api/generos/${id}`);
+    const res = await fetch(`http://localhost:3000/api/generos/${id}`);
     if (!res.ok) throw new Error('Erro no fetch do género...');
     return await res.json();
   }

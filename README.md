@@ -5,7 +5,7 @@ Uma aplicação para gerir músicas, álbuns, géneros e artistas. Permite reali
 
 ## 🌟 Funcionalidades
 
-- **Gestão de Músicas, Álbuns, Gêneros e Artistas**: Adicione, edite, exclua e visualize informações sobre músicas, álbuns, géneros e artistas.
+- **Gestão de Músicas, Álbuns, Géneros e Artistas**: Adicione, edite, exclua e visualize informações sobre músicas, álbuns, géneros e artistas.
 - **Operações Assíncronas**: A aplicação comunica com uma API backend para realizar as operações CRUD de forma eficiente.
 - **Interface Responsiva**: Adapta-se a diferentes tamanhos de tela.
 
@@ -13,12 +13,12 @@ Uma aplicação para gerir músicas, álbuns, géneros e artistas. Permite reali
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/t8ne/express-music-api.git
+   git clone https://github.com/t8ne/sound808.git
    ```
 
 2. Navegue até o diretório do projeto:
    ```bash
-   cd express-music-api
+   cd sound808
    ```
 
 3. Instale as dependências:
@@ -37,6 +37,16 @@ Uma aplicação para gerir músicas, álbuns, géneros e artistas. Permite reali
    ```
 
 6. Para acessar a base de dados, inicie o XAMPP ou MAMP e cole o código da base de dados onde os dados de músicas, álbuns, géneros e artistas estão armazenados.
+   
+7. Abra um novo terminal e mude-se para o diretório frontend:
+   ```bash
+   cd frontend
+   ```
+
+8. Execute o Svelte:
+   ```bash
+   npm run dev
+   ```
 
 ## 🔧 Configuração
 
@@ -45,7 +55,7 @@ Uma aplicação para gerir músicas, álbuns, géneros e artistas. Permite reali
 
 ## 🌐 Navegadores Suportados
 
-Testado e funcionando em:
+Testado e a funcionar em:
 - Chrome
 - Firefox
 - Safari
