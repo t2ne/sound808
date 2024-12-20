@@ -1,11 +1,12 @@
 <script lang="ts">
-	import { getMusicas, deleteMusica } from '$lib/api/musicas';
-	import { onMount } from 'svelte'; // Importa onMount de Svelte
-	import type { Musica } from '$lib/api/musicas'; // Importa o tipo Musica da API
+	import { getMusicas } from '$lib/api/musicas';
+	import { onMount } from 'svelte';
+	import type { Musica } from '$lib/api/musicas';
+	import { goto } from '$app/navigation';
 
-	let musicas: Musica[] = []; // Declaração com tipagem explícita
+	let musicas: Musica[] = [];
 
-	// Busca todas as músicas na montagem do componente
+	// Fetch all musicas on mount
 	onMount(async () => {
 		try {
 			musicas = await getMusicas();
@@ -14,21 +15,16 @@
 		}
 	});
 
-	async function removeMusica(id: number) {
-		if (confirm('Tem certeza que deseja remover esta música?')) {
-			try {
-				await deleteMusica(id);
-				musicas = musicas.filter((musica) => musica.id !== id);
-				alert('Música removida com sucesso.');
-			} catch (err) {
-				console.error(err);
-				alert('Erro ao remover a música.');
-			}
-		}
+	function goToAddMusica() {
+		goto('/musicas/add');
 	}
 </script>
 
 <h1>Músicas</h1>
+
+<div style="text-align: center; margin-bottom: 20px;">
+	<button on:click={goToAddMusica} class="view-details">Adicionar Música</button>
+</div>
 
 <ul class="list">
 	{#each musicas as musica}
@@ -38,7 +34,7 @@
 				<span class="item-time">{musica.tempo} minutos</span>
 			</div>
 			<div class="item-actions">
-				<button class="remove-button" on:click={() => removeMusica(musica.id)}>Remover</button>
+				<a class="remove-button" href={`/musicas/delete/${musica.id}`}>Remover</a>
 				<a class="view-details" href={`/musicas/${musica.id}`}>Ver Detalhes</a>
 			</div>
 		</li>
