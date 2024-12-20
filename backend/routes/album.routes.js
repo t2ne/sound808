@@ -204,7 +204,7 @@ module.exports = (app) => {
    * /api/albuns:
    *   delete:
    *     summary: Apagar todos os álbuns
-   *     tags: [Albuns]
+   *     tags: [Álbuns]
    *     responses:
    *       200:
    *         description: Todos os álbuns apagados com sucesso

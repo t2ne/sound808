@@ -93,6 +93,10 @@ h1 {
     font-size: 2rem;
 }
 
+p {
+    text-align: center;
+}
+
 /* Estilos reutilizáveis para listas de itens */
 .list {
     list-style: none;
@@ -145,6 +149,7 @@ h1 {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
+    font-family: Arial Black, sans-serif;
 }
 
 .remove-button:hover,

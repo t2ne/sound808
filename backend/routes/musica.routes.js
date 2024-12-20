@@ -30,7 +30,7 @@ module.exports = (app) => {
    *                   nome:
    *                     type: string
    *                   tempo:
-   *                     type: string
+   *                     type: number
    *                   id_album:
    *                     type: integer
    */
@@ -63,7 +63,7 @@ module.exports = (app) => {
    *                 nome:
    *                   type: string
    *                 tempo:
-   *                   type: string
+   *                   type: number
    *                 id_album:
    *                   type: integer
    *       404:
@@ -88,7 +88,7 @@ module.exports = (app) => {
    *               nome:
    *                 type: string
    *               tempo:
-   *                 type: string
+   *                 type: number
    *               id_album:
    *                 type: integer
    *     responses:
@@ -104,7 +104,7 @@ module.exports = (app) => {
    *                 nome:
    *                   type: string
    *                 tempo:
-   *                   type: string
+   *                   type: number
    *                 id_album:
    *                   type: integer
    */
@@ -134,7 +134,7 @@ module.exports = (app) => {
    *               nome:
    *                 type: string
    *               tempo:
-   *                 type: string
+   *                 type: number
    *               id_album:
    *                 type: integer
    *     responses:
@@ -150,7 +150,7 @@ module.exports = (app) => {
    *                 nome:
    *                   type: string
    *                 tempo:
-   *                   type: string
+   *                   type: number
    *                 id_album:
    *                   type: integer
    *       404:
