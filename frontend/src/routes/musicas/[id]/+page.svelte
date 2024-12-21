@@ -57,9 +57,7 @@
 {:else if musica}
 	<h1>{musica.nome}</h1>
 
-	<p>ID: {musica.id}</p>
 	<p>Tempo: {musica.tempo} minutos</p>
-
 	<p>
 		Álbum:
 		{#if albumNome}
