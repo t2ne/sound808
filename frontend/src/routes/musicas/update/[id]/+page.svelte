@@ -82,7 +82,7 @@
 
 <h1>Atualizar Música</h1>
 
-<form on:submit|preventDefault={submitForm} class="submit-form-album">
+<form on:submit|preventDefault={submitForm} class="submit-form">
 	<label>
 		Nome:
 		<input type="text" bind:value={nome} required />
