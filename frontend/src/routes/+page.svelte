@@ -1,12 +1,10 @@
 <script lang="ts">
-	import '../global.css'; // Import the global stylesheet
+	import '../global.css';
 </script>
 
-<!-- Main Page Content -->
 <div class="content">
-	<h1><span style="color: white;">Bem-vindo à</span> Sound808</h1>
-	<p>Aqui pode explorar músicas, géneros, artistas e álbuns.</p>
-	<!-- Add any other content you'd like here -->
+	<h1><span style="color: white;">Bem-vindo à</span> <span class="sound808">Sound808</span></h1>
+	<p>A <span class="sound808">batida</span> que te conecta ao mundo da música!</p>
 </div>
 
 <style>

@@ -18,7 +18,6 @@ body {
     height: 100vh;
 }
 
-/* Navbar */
 nav {
     background-color: black;
     padding: 1rem 2rem;
@@ -27,7 +26,6 @@ nav {
     align-items: center;
 }
 
-/* Logo na Navbar */
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -40,7 +38,6 @@ nav .logo a {
     color: inherit;
 }
 
-/* Navbar - link do logo */
 button.logo {
     background: none;
     border: none;
@@ -62,7 +59,6 @@ button.logo:hover {
     transition: all 0.3s;
 }
 
-/* Menu de navegação */
 nav ul {
     list-style: none;
     padding: 0;
@@ -71,12 +67,10 @@ nav ul {
     gap: 2rem;
 }
 
-/* Estilo para os itens do menu */
 nav ul li {
     display: inline;
 }
 
-/* Links do menu */
 nav ul li a {
     color: white;
     text-decoration: none;
@@ -85,13 +79,11 @@ nav ul li a {
     transition: all 0.3s;
 }
 
-/* Efeito ao passar o mouse sobre os links */
 nav ul li a:hover {
     text-decoration: underline;
     color: #f39c12;
 }
 
-/* Estilo global para o h1 */
 h1 {
     text-align: center;
     color: #f39c12;
@@ -103,7 +95,6 @@ p {
     text-align: center;
 }
 
-/* Estilos reutilizáveis para listas de itens */
 .list {
     list-style: none;
     padding: 0;
@@ -163,7 +154,6 @@ p {
     background-color: #e67e22;
 }
 
-/* Footer */
 footer {
     background-color: black;
     color: white;
@@ -173,16 +163,17 @@ footer {
     width: 100%;
     position: fixed;
     bottom: 0;
-    left: 0;
+    left: 0;    
 }
 
-footer a {
+footer p {
     color: white;
     text-decoration: none;
+    transition: all 0.3s;
 }
 
-footer a:hover {
-    text-decoration: underline;
+footer p:hover {
+    color: #f39c12;
 }
 
 .content {
@@ -192,12 +183,12 @@ footer a:hover {
 }
 
 .submit-form {
-    max-width: 400px; /* Limit the form width */
-    margin: 50px auto; /* Center the form on the page */
+    max-width: 400px;
+    margin: 30px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     background-color: #333;
 }
 
@@ -244,6 +235,7 @@ footer a:hover {
 
 .submit-form button {
     width: 100%;
+    margin-top: -100px;
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
@@ -268,7 +260,7 @@ footer a:hover {
     cursor: pointer;
     text-decoration: none;
     padding: 10px 15px;
-    border: none; /* Remove default button border */
+    border: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
     font-family: Arial Black, sans-serif;
@@ -291,3 +283,17 @@ footer a:hover {
     text-align: center;
     margin-top: 20%;
 }
+
+.sound808 {
+    animation: blinkText 0.85s infinite alternate;
+  }
+  
+  @keyframes blinkText {
+    0% {
+      color: white;
+    }
+    100% {
+      color: orange;
+    }
+  }
+  

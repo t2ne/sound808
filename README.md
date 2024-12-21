@@ -68,3 +68,4 @@ Testado e a funcionar em:
 ## 🎓 Projeto Académico
 
 Este projeto foi desenvolvido como parte de um trabalho académico, demonstrando a construção de uma aplicação web para gestão de dados com integração de API e backend.
+

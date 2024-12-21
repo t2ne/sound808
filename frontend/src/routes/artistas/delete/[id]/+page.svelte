@@ -1,47 +1,47 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { deleteMusica } from '$lib/api/musicas';
+	import { deleteArtista } from '$lib/api/artistas';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 
-	let musicaId: string | null = null;
+	let artistaId: string | null = null;
 	let confirmationMessage: string = '';
 	let messageClass: string = '';
 	let error: string | null = null;
 	let hideButtons = false;
 
 	onMount(() => {
-		musicaId = $page.params.id;
-		if (musicaId) {
-			confirmationMessage = `Tem certeza que deseja remover esta música?`;
+		artistaId = $page.params.id;
+		if (artistaId) {
+			confirmationMessage = `Tem certeza que deseja remover este artista?`;
 		} else {
 			confirmationMessage = 'ID inválido!';
 			messageClass = 'error-message';
-			error = 'Não foi possível obter o ID da música.';
+			error = 'Não foi possível obter o ID do artista.';
 		}
 	});
 
-	async function deleteMusicaConfirm() {
-		if (musicaId) {
+	async function deleteArtistaConfirm() {
+		if (artistaId) {
 			try {
 				hideButtons = true;
-				await deleteMusica(parseInt(musicaId));
+				await deleteArtista(parseInt(artistaId));
 				messageClass = 'info-message';
-				confirmationMessage = 'Música removida com sucesso!';
+				confirmationMessage = 'Artista removido com sucesso!';
 				setTimeout(() => {
-					goto('/musicas');
+					goto('/artistas');
 				}, 1500);
 			} catch (err) {
-				console.error('Erro ao remover a música:', err);
+				console.error('Erro ao remover o artista:', err);
 				messageClass = 'error-message';
-				confirmationMessage = 'Erro ao tentar remover a música. Por favor, tente novamente.';
+				confirmationMessage = 'Erro ao tentar remover o artista. Por favor, tente novamente.';
 				hideButtons = false;
 			}
 		}
 	}
 
 	function cancelDelete() {
-		goto('/musicas');
+		goto('/artistas');
 	}
 </script>
 
@@ -55,7 +55,7 @@
 		{/if}
 		<div style="margin-top: 4%;">
 			{#if !hideButtons}
-				<button on:click={deleteMusicaConfirm} class="remove-button">Sim, remover</button>
+				<button on:click={deleteArtistaConfirm} class="remove-button">Sim, remover</button>
 				<button on:click={cancelDelete} class="view-details">Cancelar</button>
 			{/if}
 		</div>

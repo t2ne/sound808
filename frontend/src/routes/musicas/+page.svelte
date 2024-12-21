@@ -6,7 +6,6 @@
 
 	let musicas: Musica[] = [];
 
-	// Fetch all musicas on mount
 	onMount(async () => {
 		try {
 			musicas = await getMusicas();
@@ -30,8 +29,7 @@
 	{#each musicas as musica}
 		<li class="item">
 			<div class="item-info">
-				<strong class="item-name">{musica.nome}</strong> -
-				<span class="item-time">{musica.tempo} minutos</span>
+				<strong class="item-name">{musica.nome}</strong>
 			</div>
 			<div class="item-actions">
 				<a class="remove-button" href={`/musicas/delete/${musica.id}`}>Remover</a>

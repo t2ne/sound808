@@ -38,4 +38,4 @@ INSERT INTO generos (nome) VALUES ('GéneroTeste1');
 
 INSERT INTO musicas (nome, tempo, id_album) VALUES ('MúsicaTeste1', 1.0, 1);
 
-INSERT INTO albuns (nome, data, id_genero, id_artista) VALUES ('ÁlbumTeste1', 2024-12-20, 1, 1);
+INSERT INTO albuns (nome, data, id_genero, id_artista) VALUES ('ÁlbumTeste1', 2024-12-31, 1, 1);

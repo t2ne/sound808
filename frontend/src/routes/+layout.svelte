@@ -1,10 +1,12 @@
 <script>
-	import { goto } from '$app/navigation'; // Importando a função de navegação
+	import { goto } from '$app/navigation';
 </script>
 
-<!-- Navbar -->
+<head>
+	<title>Sound808</title>
+</head>
+
 <nav>
-	<!-- Logo clicável que leva à página inicial -->
 	<button class="logo" on:click={() => goto('/')} type="button">Sound808</button>
 	<ul>
 		<li><a href="/musicas">Músicas</a></li>
@@ -14,18 +16,14 @@
 	</ul>
 </nav>
 
-<!-- Corpo do conteúdo -->
 <main>
 	<slot></slot>
-	<!-- Aqui ficará o conteúdo das páginas específicas -->
 </main>
 
-<!-- Footer -->
 <footer>
 	<p>t8ne - cyzuko - eduardoc0uto</p>
 </footer>
 
-<!-- Importar o global.css -->
 <style>
 	@import '../global.css';
 </style>

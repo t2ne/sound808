@@ -1,1 +1,2 @@
-// place files you want to import through the `$lib` alias in this folder.
+//Nada de necessário para este ficheiro...
+//Apenas precisa de existir para que o ficheiro seja reconhecido como um módulo.

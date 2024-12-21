@@ -8,12 +8,11 @@
 	let id_album = '';
 	let message = '';
 	let messageType = '';
-	let albuns: { id: number; nome: string }[] = []; // Array to hold fetched albums
+	let albuns: { id: number; nome: string }[] = [];
 
-	// Fetch albums on component mount
 	onMount(async () => {
 		try {
-			const res = await fetch('http://localhost:3000/api/albuns'); // Adjust the endpoint as needed
+			const res = await fetch('http://localhost:3000/api/albuns');
 			if (!res.ok) {
 				throw new Error('Erro ao carregar os álbuns');
 			}
@@ -25,13 +24,12 @@
 		}
 	});
 
-	// Handle form submission
 	async function submitForm() {
 		try {
 			await addMusica({
 				nome,
 				tempo,
-				id_album: Number(id_album) // Ensure the album ID is passed as a number
+				id_album: Number(id_album)
 			});
 			message = 'Música criada com sucesso!';
 			messageType = 'info';
@@ -43,7 +41,6 @@
 		}
 	}
 
-	// Go back to the music list
 	function goBack() {
 		window.location.href = '/musicas';
 	}

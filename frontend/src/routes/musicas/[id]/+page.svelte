@@ -4,17 +4,15 @@
 	import { page } from '$app/stores';
 
 	let musica: Musica | null = null;
-	let albumNome: string | null = null; // Store the album name
+	let albumNome: string | null = null;
 	let loading = true;
 	let error: string | null = null;
 
-	// Fetch music and album details on component mount
 	onMount(async () => {
 		try {
 			const id = $page.params.id;
 			console.log('Fetching musica with ID:', id);
 
-			// Fetch the music details
 			const res = await fetch(`http://localhost:3000/api/musicas/${id}`);
 			if (!res.ok) {
 				throw new Error(`Fetch falhado para a música de ID ${id}`);
@@ -22,17 +20,16 @@
 			musica = await res.json();
 			console.log('Fetch da música:', musica);
 
-			// Fetch the album name using id_album
 			if (musica?.id_album) {
 				const albumRes = await fetch(`http://localhost:3000/api/albuns/${musica.id_album}`);
 				if (!albumRes.ok) {
 					throw new Error('Falha ao buscar o álbum.');
 				}
 				const album = await albumRes.json();
-				albumNome = album?.nome; // Assuming the album object has a 'nome' property
+				albumNome = album?.nome;
 			}
 		} catch (err) {
-			console.error('Error fetching musica:', err);
+			console.error('Falha ao buscar a música:', err);
 			error = 'Não foi possível carregar a música. Por favor, tente novamente mais tarde.';
 		} finally {
 			loading = false;
@@ -59,7 +56,10 @@
 	<p class="error-message">{error}</p>
 {:else if musica}
 	<h1>{musica.nome}</h1>
+
+	<p>ID: {musica.id}</p>
 	<p>Tempo: {musica.tempo} minutos</p>
+
 	<p>
 		Álbum:
 		{#if albumNome}
@@ -71,11 +71,12 @@
 				{albumNome}
 			</a>
 		{:else}
-			<span>Carregando álbum...</span>
+			<span>A Carregar álbum...</span>
 		{/if}
 	</p>
 
 	<div style="text-align: center; margin-top: 2.5%">
 		<a class="view-details" href={`/musicas/update/${musica.id}`}>Atualizar</a>
+		<a class="view-details" href={`/musicas/delete/${musica.id}`}>Remover</a>
 	</div>
 {/if}

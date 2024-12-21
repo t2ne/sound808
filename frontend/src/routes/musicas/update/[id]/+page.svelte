@@ -9,16 +9,14 @@
 	let id_album = '';
 	let message = '';
 	let messageType = '';
-	let albuns: { id: number; nome: string }[] = []; // Array to hold fetched albums
-	let musicaId: string = ''; // To store the music ID
+	let albuns: { id: number; nome: string }[] = [];
+	let musicaId: string = '';
 
-	// Fetch the music and albums on component mount
 	onMount(async () => {
 		try {
 			const musicIdFromParams = $page.params.id;
 			musicaId = musicIdFromParams;
 
-			// Fetch the specific music
 			const res = await fetch(`http://localhost:3000/api/musicas/${musicaId}`);
 			if (!res.ok) {
 				throw new Error('Erro ao carregar a música');
@@ -26,9 +24,8 @@
 			const musica = await res.json();
 			nome = musica.nome;
 			tempo = musica.tempo;
-			id_album = musica.id_album.toString(); // Make sure it's a string for the select
+			id_album = musica.id_album.toString();
 
-			// Fetch albums for the select
 			const albumRes = await fetch('http://localhost:3000/api/albuns');
 			if (!albumRes.ok) {
 				throw new Error('Erro ao carregar os álbuns');
@@ -41,10 +38,8 @@
 		}
 	});
 
-	// Handle form submission
 	async function submitForm() {
 		try {
-			// Send PUT request to update the music
 			const res = await fetch(`http://localhost:3000/api/musicas/${musicaId}`, {
 				method: 'PUT',
 				headers: {
@@ -53,7 +48,7 @@
 				body: JSON.stringify({
 					nome,
 					tempo,
-					id_album: Number(id_album) // Ensure the album ID is passed as a number
+					id_album: Number(id_album)
 				})
 			});
 
@@ -71,7 +66,6 @@
 		}
 	}
 
-	// Go back to the music list
 	function goBack() {
 		window.location.href = '/musicas';
 	}
@@ -88,7 +82,7 @@
 
 <h1>Atualizar Música</h1>
 
-<form on:submit|preventDefault={submitForm} class="submit-form">
+<form on:submit|preventDefault={submitForm} class="submit-form-album">
 	<label>
 		Nome:
 		<input type="text" bind:value={nome} required />
@@ -102,7 +96,6 @@
 	<label>
 		Álbum:
 		{#if albuns.length > 0}
-			<!-- Only render the select after albuns are loaded -->
 			<select bind:value={id_album} required>
 				<option value="" disabled selected>Selecione um álbum</option>
 				{#each albuns as { id, nome }}

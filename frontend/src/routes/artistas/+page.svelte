@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { getArtistas, deleteArtista } from '$lib/api/artistas'; // Adaptar API
+	import { getArtistas, deleteArtista } from '$lib/api/artistas';
 	import { onMount } from 'svelte';
-	import type { Artista } from '$lib/api/artistas'; // Importar tipo de Artista
+	import type { Artista } from '$lib/api/artistas';
+	import { goto } from '$app/navigation';
 
 	let artistas: Artista[] = [];
 
@@ -25,9 +26,17 @@
 			}
 		}
 	}
+
+	function goToAddArtista() {
+		goto('/artistas/add');
+	}
 </script>
 
 <h1>Artistas</h1>
+
+<div style="text-align: center; margin-bottom: 20px;">
+	<button on:click={goToAddArtista} class="view-details">Adicionar Artista</button>
+</div>
 
 <!-- Lista de artistas -->
 <ul class="list">
@@ -37,7 +46,7 @@
 				<strong class="item-name">{artista.nome}</strong>
 			</div>
 			<div class="item-actions">
-				<button class="remove-button" on:click={() => removeArtista(artista.id)}>Remover</button>
+				<a href={`/artistas/delete/${artista.id}`} class="remove-button">Remover</a>
 				<a class="view-details" href={`/artistas/${artista.id}`}>Ver Detalhes</a>
 			</div>
 		</li>

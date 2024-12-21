@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { getGeneros, deleteGenero } from '$lib/api/generos'; // Adaptar API
+	import { getGeneros } from '$lib/api/generos';
 	import { onMount } from 'svelte';
-	import type { Genero } from '$lib/api/generos'; // Importar tipo de Genero
+	import { goto } from '$app/navigation';
+	import type { Genero } from '$lib/api/generos';
 
 	let generos: Genero[] = [];
 
@@ -13,23 +14,17 @@
 		}
 	});
 
-	async function removeGenero(id: number) {
-		if (confirm('Tem certeza que deseja remover este género?')) {
-			try {
-				await deleteGenero(id);
-				generos = generos.filter((genero) => genero.id !== id);
-				alert('Género removido com sucesso.');
-			} catch (err) {
-				console.error(err);
-				alert('Erro ao remover o género.');
-			}
-		}
+	function goToAddGenero() {
+		goto('/generos/add');
 	}
 </script>
 
 <h1>Géneros</h1>
 
-<!-- Lista de géneros -->
+<div style="text-align: center; margin-bottom: 20px;">
+	<button on:click={goToAddGenero} class="view-details">Adicionar Género</button>
+</div>
+
 <ul class="list">
 	{#each generos as genero}
 		<li class="item">
@@ -37,7 +32,7 @@
 				<strong class="item-name">{genero.nome}</strong>
 			</div>
 			<div class="item-actions">
-				<button class="remove-button" on:click={() => removeGenero(genero.id)}>Remover</button>
+				<a class="remove-button" href={`/generos/delete/${genero.id}`}>Remover</a>
 				<a class="view-details" href={`/generos/${genero.id}`}>Ver Detalhes</a>
 			</div>
 		</li>

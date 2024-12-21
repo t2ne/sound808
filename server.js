@@ -15,6 +15,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+// Definição do Swagger
 const swaggerDefinition = {
   openapi: "3.0.1",
   info: {
@@ -27,30 +28,33 @@ const swaggerDefinition = {
   },
   basePath: "/",
 };
+
+// Opções do Swagger
 const swaggerOptions = {
   swaggerDefinition,
   apis: ["./backend/routes/*.js"],
 };
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
 
+// Middleware para servir a documentação do Swagger
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// Middleware for handling requests
+// Middleware para fazer parse do body das requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Test route
+// Rota Teste
 app.get("/", (req, res) => {
   res.json({ message: "Sound808 API" });
 });
 
-// Importing routes
+// Rotas
 require("./backend/routes/album.routes.js")(app);
 require("./backend/routes/artista.routes.js")(app);
 require("./backend/routes/genero.routes.js")(app);
 require("./backend/routes/musica.routes.js")(app);
 
-// Starting the server
+// Iniciar o servidor
 app.listen(PORT, () => {
   console.log(`Servidor ativo em: http://localhost:${PORT}.`);
   console.log(`Swagger UI disponível em: http://localhost:${PORT}/api-docs`);
