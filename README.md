@@ -63,7 +63,7 @@ Testado e a funcionar em:
 
 ## 🙋‍♂️ Autor
 
-@t8ne - @cyzuko - @eduardoc0uto
+@t2ne
 
 ## 🎓 Projeto Académico
 
