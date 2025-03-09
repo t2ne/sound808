@@ -21,7 +21,7 @@
 </main>
 
 <footer>
-	<p>t8ne - cyzuko - eduardoc0uto</p>
+	<p>t2ne - 2025</p>
 </footer>
 
 <style>
