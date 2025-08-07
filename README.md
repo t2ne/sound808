@@ -1,71 +1,75 @@
-
 # Sound808 🎵
 
-Uma aplicação para gerir músicas, álbuns, géneros e artistas. Permite realizar operações como visualização, adição, atualização e exclusão de registos, com uma interface simples e interativa.
+An application for managing songs, albums, genres, and artists. It allows viewing, adding, updating, and deleting records through a simple and interactive interface.
 
-## 🌟 Funcionalidades
+## 🌟 Features
 
-- **Gestão de Músicas, Álbuns, Géneros e Artistas**: Adicione, edite, exclua e visualize informações sobre músicas, álbuns, géneros e artistas.
-- **Operações Assíncronas**: A aplicação comunica com uma API backend para realizar as operações CRUD de forma eficiente.
-- **Interface Responsiva**: Adapta-se a diferentes tamanhos de tela.
+- **Manage Songs, Albums, Genres, and Artists**: Add, edit, delete, and view information about songs, albums, genres, and artists.
+- **Asynchronous Operations**: The application communicates with a backend API to efficiently perform CRUD operations.
+- **Responsive Interface**: Adapts to different screen sizes for usability across devices.
 
-## 🛠️ Instalação
+## 🛠️ Installation
 
-1. Clone o repositório:
+1. Clone the repository:
+
    ```bash
    git clone https://github.com/t8ne/sound808.git
    ```
 
-2. Navegue até o diretório do projeto:
+2. Navigate to the project directory:
+
    ```bash
    cd sound808
    ```
 
-3. Instale as dependências:
+3. Install the dependencies:
+
    ```bash
    npm install
    ```
 
-4. Instale o `nodemon` globalmente:
+4. Install `nodemon` globally:
+
    ```bash
    npm install -g nodemon
    ```
 
-5. Execute o servidor da API com `nodemon`:
+5. Run the API server with `nodemon`:
+
    ```bash
    nodemon server.js
    ```
 
-6. Para acessar a base de dados, inicie o XAMPP ou MAMP e cole o código da base de dados onde os dados de músicas, álbuns, géneros e artistas estão armazenados.
-   
-7. Abra um novo terminal e mude-se para o diretório frontend:
+6. To access the database, start XAMPP or MAMP and import the SQL code where the data for songs, albums, genres, and artists is stored.
+7. Open a new terminal and go to the frontend directory:
+
    ```bash
    cd frontend
    ```
 
-8. Execute o Svelte:
+8. Run the Svelte development server:
    ```bash
    npm run dev
    ```
 
-## 🔧 Configuração
+## 🔧 Configuration
 
-- **Conexão com o Backend**: Certifique-se de que a URL de comunicação com a API no código está correta.
-- **Banco de Dados**: Certifique-se de que o XAMPP/MAMP está em execução e que a base de dados está configurada corretamente para a aplicação.
+- **Backend Connection**: Make sure the API URL in the code is correct and points to your local backend.
+- **Database**: Ensure that XAMPP/MAMP is running and the database is properly set up for the application.
 
-## 🌐 Navegadores Suportados
+## 🌐 Supported Browsers
 
-Testado e a funcionar em:
+Tested and working on:
+
 - Chrome
 - Firefox
 - Safari
 - Edge
 
-## 🙋‍♂️ Autor
+## 🙋‍♂️ Author
 
 @t2ne
 
-## 🎓 Projeto Académico
+## 🎓 Academic Project
 
-Este projeto foi desenvolvido como parte de um trabalho académico, demonstrando a construção de uma aplicação web para gestão de dados com integração de API e backend.
-
+This project was developed as part of an academic assignment, demonstrating the construction of a web application for managing data with backend integration and API communication.
