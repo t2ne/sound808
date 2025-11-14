@@ -13,7 +13,7 @@ An application for managing songs, albums, genres, and artists. It allows viewin
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/t8ne/sound808.git
+   git clone https://github.com/t2ne/sound808.git
    ```
 
 2. Navigate to the project directory:

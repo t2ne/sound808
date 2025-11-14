@@ -23,7 +23,7 @@ const swaggerDefinition = {
     version: "1.0.0",
     description: "API de gestão de músicas, álbuns, artistas e géneros.",
     contact: {
-      name: "t8ne - cyzuko - eduardoc0uto",
+      name: "t2ne - cyzuko - eduardoc0uto",
     },
   },
   basePath: "/",
